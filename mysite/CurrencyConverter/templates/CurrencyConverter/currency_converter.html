@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер валют</title>
+
+</head>
+<body>
+
+
+<form action="{% url 'currency_converter' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+        <button type="submit" >Конвертировать</button>
+
+    {% if result_convertible %}
+        <h3>Результат конвертации</h3>
+        <h4>{{ result_convertible }}</h4>
+    {% endif %}
+</form>
+
+
+</body>
+</html>
